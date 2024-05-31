@@ -100,30 +100,245 @@
   </div>
 </section>
 
+<!-- First Figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+        <!-- Your video here -->
+        <!-- <source src="static/videos/banner_video.mp4" type="video/mp4">
+      </video> -->
+      <img src="static/images/first_figure.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Illustration of the considered <b>collaborative planar pushing</b> problem.
+        Top: Scenarios of <b>planar pushing</b> problem with three robots. 
+        Middle: Scenarios of <b>6D pushing</b> problem with four robots.
+        Bottom: <b>hardware experiment</b> of the planar pushing scenario with three robots.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End First Figure -->
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Pushing is a simple yet effective skill for robots
+            to interact with and further change the environment. Related
+            work has been mostly focused on utilizing it as a non-prehensile
+            manipulation primitive for a robotic manipulator. However, it can
+            also be beneficial for low-cost mobile robots that are not equipped
+            with a manipulator. This work tackles the general problem
+            of controlling a team of mobile robots to push collaboratively
+            polytopic objects within complex obstacle-cluttered environments.
+            It incorporates several characteristic challenges for contact-rich
+            tasks such as the hybrid switching among different contact
+            modes and under-actuation due to constrained contact forces.
+            The proposed method is based on hybrid optimization over a
+            sequence of possible modes and the associated pushing forces,
+            where (i) a set of sufficient modes is generated with a multi
+            directional feasibility estimation, based on quasi-static analyses
+            for general objects and any number of robots; (ii) a hierarchical
+            hybrid search algorithm is designed to iteratively decompose the
+            navigation path via arch segments and select the optimal param
+            eterized mode; and (iii) a nonlinear model predictive controller
+            is proposed to track the desired pushing velocities adaptively
+            online for each robot. The proposed framework is complete under
+            mild assumptions. Its efficiency and effectiveness are validated in
+            high-fidelity simulations and hardware experiments. Robustness
+            to motion and actuation uncertainties is also demonstrated.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
 <section class="framework">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="static/images/framework.png" alt="Tree" id="tree" style="width: 100%; height: auto;">
       <h2 class="subtitle has-text-centered">
-        Pushing is a simple yet effective skill for robots to interact with and further change the environment.
-        Related work has been mostly focused on utilizing 
-        it as a non-prehensile manipulation primitive for a robotic manipulator.
-        However, it can also be beneficial for low-cost mobile robots that are not equipped with a manipulator.
-        This work tackles the general problem of controlling a team of mobile robots
-        to push collaboratively polytopic objects within complex obstacle-cluttered environments.
-        It incorporates several characteristic challenges for contact-rich tasks such as the
-        hybrid switching among different contact modes and under-actuation due to constrained contact forces. 
+        The proposed solution tackles the above collaborative pushing problem with an efficient keyframe-guided hybrid search algorithm over the timed sequence of pushing modes, 
+        forces and target trajectories. The resulting hybrid plan is then executed by a mode switching strategy and a NMPC controller. 
+        A re-planning module governs the execution performance and triggers the adaptation of high-level hybrid plan as needed.
       </h2>
     </div>
   </div>
 </section>
+<!-- Algorithm Visualization -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Mode Generation via Sparse Optimization (<b>MG-SO</b>) for a T-shape object and different goal states.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/Mode Generation.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Visualization of the searching process of KGHS algorithm.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/KGHS.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Algorithm Visualization -->
+
+<!-- Simulation Result  -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Simulation result for plannar pushing problem.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/Simulation.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Simulation result for 6D pushing problem.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/6Dpushing.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Simulation Result -->
+
+<!-- Scalability -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="FleetSize" class="title is-3" style="text-align: center;">
+          Final trajectories when different number of robots are deployed, yielding different modes and task durations.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/Scala.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="EvenLargerTeam" class="title is-3" style="text-align: center;">
+          Scalability analysis for 40 robots: ﬁnal trajectories (Left) and control inputs of all robots (Right).
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/Even Larger teams.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Scalability -->
 
 
-<!-- Teaser video-->
+<!-- Online Adaptation -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Online Adaptation.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/OnlineAdaptation.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Temporal Blackout.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/TemporalBlackout.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Online Adaptation -->
+
+<!-- Comparison -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Online Adaptation.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/Comparison.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Temporal Blackout.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/ComparisonUnderNoiseEnv.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Comparison -->
+
+<!-- More General Objects -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Online Adaptation.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/MoreGeneralObjects.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Comparison -->
+
+<!-- Hardware Experiments -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Hardware experiment: Scenario 1.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/Hardware_Scen1.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Hardware experiment: Scenario 2.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/hardware_scen2.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hardware Experiments -->
+
+<!-- More General Objects -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width is-centered has-text-centered">
+        <h2 id="request0" class="title is-3" style="text-align: center;">
+        Hardware experiment: L-shape objects.
+        </h2>
+        <video controls="" autoplay="" loop="" muted="" playsinline="" src="static/videos/hardware_scen34.mp4" poster="" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Comparison -->
+
+
+<!-- whole video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
         <source src="static/videos/main_video.mp4"
         type="video/mp4">
@@ -134,7 +349,7 @@
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End whole video -->
 
 <footer class="footer">
   <div class="container">
@@ -153,6 +368,7 @@
     </div>
   </div>
 </footer>
+
 
 <!-- Statcounter tracking code -->
   
